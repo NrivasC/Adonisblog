@@ -1,0 +1,38 @@
+@layout('layouts/main')
+
+@section('content')
+    <section class="container">
+      <div class="row"> 
+         <div class="col-10">
+                <div class="row">
+                    <h1>Login</h1>  
+                </div>  
+                <div class="row">
+                    <form action="/login" method="POST">
+                        <div class="input-field col s6">
+                            <input type="email" name="email" id="email" class="validate">
+                            <label for="email">Email</label>
+                            @if(flashMessages.has('errors.email'))
+                                <p class="red-text"> {{ flashMessages.get('errors.email') }} </p>
+                            @end
+                        </div>
+                        
+                        <div class="input-field col s6"> 
+                            <input type="password" name="password" id="password" >
+                            <label for="password">Password</label>
+                            @if(flashMessages.has('errors.password'))
+                                <p class="red-text"> {{ flashMessages.get('errors.password') }} </p>
+                            @end
+                        </div>
+                        <div>
+                            <button type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <a href="/signup">Signup</a>
+                </div>
+         </div>
+    </div>   
+    </section>
+@end

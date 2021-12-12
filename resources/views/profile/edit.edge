@@ -1,0 +1,31 @@
+@layout('layouts/main')
+
+@section('content')
+
+<section class="container">
+    <h1 class="">Update Your Profile</h1>
+    <div>
+        <h3>Your profile image</h3>
+        <img src="../../{{auth.user.avatar}}" alt="profile" style="width:250px; height: 200px"class="rounded-circle">
+    </div>
+    <div class="">
+        <form action="" method="post" enctype="multipart/form-data">
+        <div class="">
+                <p class="">Upload your profile photo</p>
+                <input type="file" name="avatar" id="avatar" class="w-full">
+            </div>
+
+            <div>
+
+            </div>
+            <div>
+                <p class="">Descrption</p>
+                <textarea class="" name="description" id="description" rows="4" placeholder="Your Description Comes Here">{{auth.user.description}}</textarea>
+            </div>
+            <input type="submit" value="Update" class="">
+        </form>
+    </div>
+</section>
+
+    
+@end 
